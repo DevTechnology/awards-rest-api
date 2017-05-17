@@ -16,7 +16,7 @@ This project is made freely available under the terms of the MIT License.
 
 * As Postgres super user, run the CreateDB.sql script in the setup directory.
 
-		user@ubuntu:~$ sql <CreateDB.sql
+		user@ubuntu:~$ psql <CreateDB.sql
 
 * Assumbing a Linux Shell, set the PGUSER and PGPASSWD environment variables in the command shell window nodemon will be run:
 
