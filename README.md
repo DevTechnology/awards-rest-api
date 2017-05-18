@@ -25,14 +25,12 @@ This project is made freely available under the terms of the [MIT License](LICEN
 
 ### Development Setup
 
-		user@ubuntu:~$ cd awards-rest-api 
+		user@ubuntu:~$ cd awards-rest-api/api 
 		user@ubuntu:~$ npm update 
-		user@ubuntu:~$ cd api
 
 Edit the config.js file to contain the host IP address of your host environment.  This is not currently set to localhost or 127.0.01
-because most development is being done in a local VM.
-
-		user@ubuntu:~$ npm update 
+because most development is being done in a local VM.  All Unit and Integration Tests can be run like so:
+ 
 		user@ubuntu:~$ npm test 
 
 After tests are run, code coverage reports are generated.  If all tests pass, you should be ok to start the server.
@@ -41,7 +39,6 @@ After tests are run, code coverage reports are generated.  If all tests pass, yo
 
 To run in development mode, you can use nodemon to watch for code changes and automatically re-start your server when code changes are detected:
 
-		user@ubuntu:~$ cd api 
 		user@ubuntu:~$ nodemon app.js 
 		
 ### Swagger API Documentation
