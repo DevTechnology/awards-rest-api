@@ -27,8 +27,15 @@ This project is made freely available under the terms of the MIT License.
 
 		user@ubuntu:~$ cd awards-rest-api 
 		user@ubuntu:~$ npm update 
-		user@ubuntu:~$ cd api 
+		user@ubuntu:~$ cd api
+
+Edit the config.js file to have the host IP address of your host environment.  This is not currently set to localhost or 127.0.01
+because most development is being done in a local VM.
+
 		user@ubuntu:~$ npm update 
+		user@ubuntu:~$ npm test 
+
+After tests are run, code coverage reports are generated.  If all tests pass, you should be ok to start the server.
 
 ### Running In Development Mode
 
@@ -37,6 +44,8 @@ To run in development mode, you can use nodemon to watch for code changes and au
 		user@ubuntu:~$ cd api 
 		user@ubuntu:~$ nodemon app.js 
 		
-		
+### Swagger API Documentation
+
+Swagger API Documentation is available at http://[your_server]:8080/api-docs. 
 
  
