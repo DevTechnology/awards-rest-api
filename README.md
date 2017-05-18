@@ -18,7 +18,7 @@ This project is made freely available under the terms of the [MIT License](LICEN
 
 		user@ubuntu:~$ psql <CreateDB.sql
 
-* Assumbing a Linux Shell, set the PGUSER and PGPASSWD environment variables in the command shell window nodemon will be run:
+* Assuming a Linux Shell, set the PGUSER and PGPASSWD environment variables in the command shell window nodemon will be run:
 
 		user@ubuntu:~$ export PGUSER=awards
 		user@ubuntu:~$ export PGPASSWORD=awards
