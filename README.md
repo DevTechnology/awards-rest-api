@@ -12,7 +12,7 @@ This project is made freely available under the terms of the MIT License.
 
 ## SETUP
 
-### PSQL Database Setup
+### PostgreSQL Database Setup
 
 * As Postgres super user, run the CreateDB.sql script in the setup directory.
 
@@ -29,7 +29,7 @@ This project is made freely available under the terms of the MIT License.
 		user@ubuntu:~$ npm update 
 		user@ubuntu:~$ cd api
 
-Edit the config.js file to have the host IP address of your host environment.  This is not currently set to localhost or 127.0.01
+Edit the config.js file to contain the host IP address of your host environment.  This is not currently set to localhost or 127.0.01
 because most development is being done in a local VM.
 
 		user@ubuntu:~$ npm update 
