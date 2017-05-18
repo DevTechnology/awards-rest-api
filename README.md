@@ -1,9 +1,9 @@
-# README
+# AWARDS-REST-API 
 
-## DESCRIPTION
+## PROJECT DESCRIPTION
 
 This is a RESTful set of Web Service API's meant to facilitate the creation of a generic Corporate Awards System.  Work on these API's is on-going.
-Currently the API's facilitate User Authentication, Authorization through Role Assignments, and Award Nomination.  The API's are written in nodejs
+Currently these API's facilitate User Authentication, Authorization through Role Assignments, and Award Nomination.  The API's are written in nodejs
 and documented using Swagger.  The back-end data store is PostreSQL.
 
 ## LICENSE
