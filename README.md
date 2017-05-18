@@ -8,7 +8,7 @@ and documented using Swagger.  The back-end data store is PostreSQL.
 
 ## LICENSE
 
-This project is made freely available under the terms of the MIT License.
+This project is made freely available under the terms of the [MIT License](LICENSE).
 
 ## SETUP
 
