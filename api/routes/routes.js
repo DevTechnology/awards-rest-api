@@ -1,6 +1,56 @@
 var express = require('express');
 var router = express.Router();
+var auth_controller = require('../controllers/Authenticate');
 var user = require('../controllers/UsersController');
+
+/**
+ * @swagger
+ * definition:
+ *   auth:
+ *     properties:
+ *       email:
+ *         type: string 
+ *       password: 
+ *         type: string
+ */
+
+ /**
+  * @swagger
+  * definition:
+  *   auth_response:
+  *     properties:
+  *       success:
+  *         type: string
+  *       message:
+  *         type: string
+  *       token:
+  *         type: string
+  */
+
+/**
+ * @swagger
+ * /api/authenticate:
+ *   post:
+ *     tags:
+ *       - Authenticate A User 
+ *     description: Provides a JWT Token to authorized credentials 
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: auth 
+ *         description: user object
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/auth'
+ *     responses:
+ *       200:
+ *         description: JSON reponse 
+ *         schema:
+ *           $ref: '#/definitions/auth_response'
+ */
+
+router.post('/authenticate', auth_controller);
 
 /**
  * @swagger

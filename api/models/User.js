@@ -19,20 +19,8 @@ var User = {
 User.findUserByEmail = function(email, cb) {
 	var db = database.getDB();
 	db.one('SELECT * from users where email=$1', email).then(function(data) {
-		this.id = data.id;
-		this.first_name = data.first_name;
-		this.last_name = data.last_name;
-		this.nick_name = data.nick_name;
-		this.avatar = data.avatar;
-		this.company = data.company;
-		this.phone = data.phone;
-		this.title = data.title;
-		this.manager_name = data.manager_name;
-		this.email = data.email;
-		this.password = data.password;
-		this.role = data.role;
-		this.comparePassword = comparePassword;
-		cb(null, this);
+		data.comparePassword = comparePassword;
+		cb(null, data);
 	}).catch(function(err) {
 		cb(err);
 	});
