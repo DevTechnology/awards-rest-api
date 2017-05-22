@@ -68,6 +68,9 @@ app.use(function (req, res, next) {
 
 app.use(express.static('public'));
 
+// Protect API
+app.all('/api/user*', [require('./controllers/ValidateToken')]);
+
 app.use(config.apiroot, routes);
 
 var server = app.listen(config.server_port, function() {
