@@ -18,7 +18,7 @@ describe('testing user authentication', function() {
 
 	it('returns authentication token', function test(done) {
 		var auth = {
-	   		"email": "james.caple@devtechnology.com",
+	   		"email": "kraken@yahoo.com",
 	   		"password": "password",
 		};
 

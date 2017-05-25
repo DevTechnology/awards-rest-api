@@ -5,17 +5,17 @@ create database devtech_awards;
 \c devtech_awards;
 
 create table Users (
-	ID SERIAL PRIMARY KEY,
-	first_name VARCHAR,
-	last_name VARCHAR,
+	ID SERIAL PRIMARY KEY NOT NULL,
+	first_name VARCHAR NOT NULL,
+	last_name VARCHAR NOT NULL,
 	nick_name VARCHAR,
 	avatar VARCHAR,
 	company VARCHAR,
 	phone VARCHAR,
 	title VARCHAR,
 	manager_name VARCHAR,
-	email VARCHAR,
-	password VARCHAR,
+	email VARCHAR NOT NULL,
+	password VARCHAR NOT NULL,
 	role VARCHAR
 );
 

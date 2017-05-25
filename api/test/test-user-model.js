@@ -8,7 +8,9 @@ process.env.PGPASSWORD='awards';
 describe('Find User and test password', function() {
 	var test_user;
 	beforeEach(function(done) {
-		User.findUserByEmail('james.caple@devtechnology.com', function(err, user) {
+		var user = new User();
+		user.email = 'kraken@yahoo.com';
+		user.findUserByEmail(function(err, user) {
 			if (err) throw err;
 			test_user = user;
 			console.log("Test Found User ==> " + test_user.email);
@@ -28,9 +30,9 @@ describe('Find User and test password', function() {
 	});
 
 	it('ensure data elements', function testDataElements() {
-		assert.equal(test_user.email, 'james.caple@devtechnology.com');
+		assert.equal(test_user.email, 'kraken@yahoo.com');
 		assert.equal(test_user.first_name, 'James');
-		assert.equal(test_user.last_name, 'Caple');
+		assert.equal(test_user.last_name, 'Kraken');
 		assert.equal(test_user.avatar, '/resources/img/James.jpg');
 		assert.equal(test_user.phone, '(703) 555-5555');
 		assert.equal(test_user.title, 'Chief Visioneer');

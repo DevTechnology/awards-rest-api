@@ -32,7 +32,10 @@ module.exports = function(req, res, next) {
 
 	console.log("Looking for user with email >>> " + decodedUserEmail);
 
-	User.findUserByEmail(decodedUserEmail, function(err, user) {
+	var user = new User();
+	user.email = decodedUserEmail;
+
+	user.findUserByEmail(function(err, _user) {
 		if (err) {
 			res.status(500);
 			res.json({
@@ -40,7 +43,7 @@ module.exports = function(req, res, next) {
 				"message": "An unexpected error occurred: " + err
 			});
 		} else {
-			if (user.password === decoded.password) {
+			if (_user.password === decoded.password) {
 				next();
 			} else {
 				res.status(401);

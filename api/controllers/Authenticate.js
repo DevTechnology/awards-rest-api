@@ -9,22 +9,23 @@ var User = require('../models/User');
 var authenticateUserCredentials = function(req, res, next) {
 
 	// Incoming credentials
-	var email = req.body.email;
-	var password = req.body.password;
+	var user = new User();
+	user.email = req.body.email;
+	user.password = req.body.password;
 
-	User.findUserByEmail(email, function(err, user) {
+	user.findUserByEmail(function(err, foundUser) {
 		if (err) throw err;
 
 		if (!user) { 
 			res.json({ success: false, message: 'Authentication failed. User not found.' });
 		} else if (user) {
-			user.comparePassword(password, function(err, isMatch) {
+			foundUser.comparePassword(user.password, function(err, isMatch) {
 				if (err) throw err;
 
 				if (isMatch) {
 					// if user is found and password is right
 					// create a token
-					var token = jwt.sign(user, config.secret, {
+					var token = jwt.sign(foundUser, config.secret, {
 						expiresIn: 28800 
 					});
 
