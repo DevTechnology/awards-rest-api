@@ -1,4 +1,10 @@
-DROP DATABASE IF EXISTS devtech_awards;
+revoke all privileges on database devtech_awards from awards;
+revoke usage on schema public from awards;
+revoke all on all sequences in schema public from awards;
+drop user if exists awards;
+
+
+drop database if exists devtech_awards;
 
 create database devtech_awards;
 
@@ -24,14 +30,13 @@ create table Awards (
 	nominatorId integer REFERENCES Users(ID) NOT NULL,
 	rating integer NOT NULL,
 	comment VARCHAR NOT NULL,
-	nominateDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
-	nominationUpdateDate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
-	nominationReviewData TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+	nominatedate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+	nominationupdatedate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+	nominationreviewdate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
 	disposition VARCHAR
 );
 
-DROP USER IF EXISTS awards;
-CREATE USER awards WITH PASSWORD 'awards';
+create user awards with password 'awards';
 grant all privileges on database devtech_awards to awards;
-GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO awards;
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO awards;
+grant select, insert, update, delete on all tables in schema public TO awards;
+grant all privileges on all sequences in schema public to awards;
