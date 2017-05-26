@@ -26,13 +26,14 @@ create table Users (
 );
 
 create table Awards (
-	userId integer PRIMARY KEY REFERENCES Users(ID),
+	ID SERIAL PRIMARY KEY NOT NULL,
+	userId integer REFERENCES Users(ID),
 	nominatorId integer REFERENCES Users(ID) NOT NULL,
 	rating integer NOT NULL,
 	comment VARCHAR NOT NULL,
 	nominatedate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
-	nominationupdatedate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
-	nominationreviewdate TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+	nominationupdatedate TIMESTAMP WITH TIME ZONE,
+	nominationreviewdate TIMESTAMP WITH TIME ZONE,
 	disposition VARCHAR
 );
 
