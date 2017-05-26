@@ -22,7 +22,7 @@ describe('Make an Award and persist it', function() {
 	});
 
 	it('Saved award should exist in database', function testPasswords(done) {
-		
+		assert.True(1);		
 	});
 
 });
