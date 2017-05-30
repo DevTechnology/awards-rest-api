@@ -3,8 +3,11 @@
 ## PROJECT DESCRIPTION
 
 This is a RESTful set of Web Service API's meant to facilitate the creation of a generic Corporate Awards System.  Work on these API's is on-going.
-Currently these API's facilitate User Authentication, Authorization through Role Assignments, and Award Nomination.  The API's are written in nodejs
-and documented using Swagger.  The back-end data store is PostreSQL.
+Currently these API's facilitate User Authentication, Authorization through Role Assignments, and Award Nomination.  
+
+The API's are written in nodejs and documented using Swagger.  The back-end data store is PostreSQL.
+
+The Unit and Integration tests are written in mocha/chai and uses nyc instanbul for the code coverage reporting.
 
 ## LICENSE
 
