@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var auth_controller = require('../controllers/Authenticate');
 var user = require('../controllers/UsersController');
+var award = require('../controllers/AwardsController');
 
 /**
  * @swagger
@@ -159,6 +160,11 @@ router.get('/user/:id', user.getUser);
  *           $ref: '#/definitions/add_user_response'
  */
 router.post('/user', user.createUser);
+
+router.post('/award', award.createAward);
+router.get('/award/:id', award.getAward);
+router.get('/awards', award.getAllAwards);
+
 
 module.exports = router;
 
