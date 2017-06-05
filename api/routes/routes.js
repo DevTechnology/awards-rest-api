@@ -161,10 +161,103 @@ router.get('/user/:id', user.getUser);
  */
 router.post('/user', user.createUser);
 
-router.post('/award', award.createAward);
-router.get('/award/:id', award.getAward);
-router.get('/awards', award.getAllAwards);
+/**
+ * @swagger
+ * definition:
+ *   award:
+ *     properties:
+ *       userid:
+ *         type: integer 
+ *       nominatorid:
+ *         type: integer 
+ *       rating:
+ *         type: integer
+ *       comment:
+ *         type: string 
+ *       nominatedate:
+ *         type: string
+ *       disposition:
+ *         type: string
+ */
 
+ /**
+  * @swagger
+  * definition:
+  *   add_award_response:
+  *     properties:
+  *       status:
+  *         type: string
+  *       data:
+  *         type: string
+  *       message:
+  *         type: string
+  */
+
+/**
+ * @swagger
+ * /api/award:
+ *   post:
+ *     tags:
+ *       - Create A New Award 
+ *     description: Create a new award 
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: award 
+ *         description: award object
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/award'
+ *     responses:
+ *       200:
+ *         description: JSON reponse 
+ *         schema:
+ *           $ref: '#/definitions/add_award_response'
+ */
+router.post('/award', award.createAward);
+
+
+/**
+ * @swagger
+ * /api/award/{id}:
+ *   get:
+ *     tags:
+ *       - Retrieve An Award 
+ *     description: Retrieve a specific award 
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: award 
+ *         description: award object
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/award'
+ *     responses:
+ *       200:
+ *         description: JSON reponse 
+ *         schema:
+ *           $ref: '#/definitions/add_award_response'
+ */
+router.get('/award/:id', award.getAward);
+
+/**
+ * @swagger
+ * /api/awards:
+ *   get:
+ *     tags:
+ *       - Retrieves All Award 
+ *     description: Retrieves All Awards 
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: JSON reponse 
+ *         schema:
+ *           $ref: '#/definitions/add_award_response'
+ */
+router.get('/awards', award.getAllAwards);
 
 module.exports = router;
 
